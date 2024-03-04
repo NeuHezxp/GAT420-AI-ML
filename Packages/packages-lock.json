@@ -78,7 +78,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ml-agents": {
-      "version": "file:C:/Homework/Quarter 6/Ai/ml-agents-release_21/com.unity.ml-agents",
+      "version": "file:D:/Homework/Game/Ai/ml-agents-release_21/ml-agents-release_21/com.unity.ml-agents",
       "depth": 0,
       "source": "local",
       "dependencies": {
@@ -89,7 +89,7 @@
       }
     },
     "com.unity.ml-agents.extensions": {
-      "version": "file:C:/Homework/Quarter 6/Ai/ml-agents-release_21/com.unity.ml-agents.extensions",
+      "version": "file:D:/Homework/Game/Ai/ml-agents-release_21/ml-agents-release_21/com.unity.ml-agents.extensions",
       "depth": 0,
       "source": "local",
       "dependencies": {
