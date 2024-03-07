@@ -11,6 +11,8 @@ public class MazeAgent : Agent
     [SerializeField] private Transform targetPoint; // Reference to the target's transform.
     [SerializeField] float speed = 1; // Speed of the agent movement.
     [SerializeField] float turnRate = 360; // Rate at which the agent can turn.
+    [SerializeField] MazeGenerator mazeGen;
+    [SerializeField] Animator animator;
 
 
     Rigidbody rb;
@@ -75,6 +77,8 @@ public class MazeAgent : Agent
         var continuousActionsOut = actionsOut.ContinuousActions;
         continuousActionsOut[0] = Input.GetAxis("Horizontal"); // Left/right input.
         continuousActionsOut[1] = Input.GetAxis("Vertical"); // Forward/backward input.
+
+        animator.SetFloat("Speed",speed);
     }
 
     // Collision detection for rewards and episode termination.
@@ -89,6 +93,9 @@ public class MazeAgent : Agent
         {
             AddReward(-1);
             EndEpisode();
+            mazeGen.SpawnEntireGrid(5);
+            StartCoroutine(mazeGen.RanMaze());
+
         }
 
         // Check if the collided object is the target

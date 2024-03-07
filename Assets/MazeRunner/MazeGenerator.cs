@@ -33,7 +33,7 @@ public class MazeGenerator : MonoBehaviour
     }
 
 
-    private void SpawnEntireGrid(int size)
+    public void SpawnEntireGrid(int size)
     {
         //deleting all walls in order to generate a new maze
         var prefabs = (GameObject.FindGameObjectsWithTag("prefabs"));
@@ -86,7 +86,7 @@ public class MazeGenerator : MonoBehaviour
     }
 
 
-    private IEnumerator RanMaze()
+    public IEnumerator RanMaze()
     {
         _sets = new DisjointSet(size * size);
         for (int i = 0; i < size * size; i++) _sets.MakeSet(i);
