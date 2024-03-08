@@ -87,6 +87,7 @@ public class MazeAgent : Agent
 
         int obstacleLayer = LayerMask.NameToLayer("Obstacle");
         int targetLayer = LayerMask.NameToLayer("Target");
+        int Halfway = LayerMask.NameToLayer("Halfway");
 
         // Check if the collided object is an obstacle
         if (collision.gameObject.layer == obstacleLayer)
@@ -96,6 +97,12 @@ public class MazeAgent : Agent
             mazeGen.SpawnEntireGrid(5);
             StartCoroutine(mazeGen.RanMaze());
 
+        }
+
+        if (collision.gameObject.layer == Halfway)
+        {
+            AddReward(5);
+            
         }
 
         // Check if the collided object is the target
